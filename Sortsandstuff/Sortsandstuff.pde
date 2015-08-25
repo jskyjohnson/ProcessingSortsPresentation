@@ -2,10 +2,10 @@
 //SKY JOHNSON 8/25/15
 
 Block k;
-BlockAnimator blockanimtaor;
+BlockList blocklist;
 void setup(){
   k = new Block();
-  blockanimtaor = new BlockAnimator();
+  blocklist = new BlockList();
   size(500,500);
 }
 void draw(){
