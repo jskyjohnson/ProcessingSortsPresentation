@@ -1,9 +1,13 @@
+//Block Class, a more complex version of rect that allows colors and easier transforms.
+
 class Block{
+  
   
   float x;
   float y;
   float size;
   color k;
+  
   Block(){
     x = 50;
     y = 50;
