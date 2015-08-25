@@ -14,15 +14,24 @@ class Block{
     size = 50;
     k = #FFFFFF;
   }
+  
   Block(float a, float b, float sizec, color a1){
    x = a;
    y = b;
    size = sizec;
    k = a1;
   }
+  
   void display(){
+    //Color
     stroke(k);
     fill(k);
-    rect(x,y,size,size);
+    //Transform or position
+    pushMatrix();
+      translate(x,y);
+      
+      rect(0,0,size,size);
+    popMatrix();
   }
+  
 }
