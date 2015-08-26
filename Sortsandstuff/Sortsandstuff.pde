@@ -17,18 +17,28 @@
 
 Block k;
 BlockList blocklist;
+boolean ktemp = true;
+
 void setup(){
   k = new Block();
   blocklist = new BlockList();
   size(500,500);
-  blocklist.listGenerate();
+  blocklist.listGenerate(10);
   blocklist.shuffleblocks();
   System.out.println(blocklist.toString());
   //blocklist.addBlock(k);
 }
+void update(){
+  blocklist.update();
+}
 void draw(){
   clear();
+  update();
   background(#AAAAAA);
   blocklist.display();
+  
+  blocklist.swapBlocks((int)random(blocklist.getLength()),(int)random(blocklist.getLength())); 
+   
+  
   
 }

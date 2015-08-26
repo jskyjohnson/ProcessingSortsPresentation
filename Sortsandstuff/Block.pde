@@ -8,7 +8,11 @@ class Block{
   int yscaler;
   float size;
   color k;
-  
+  float speed;
+  boolean canMove;
+  boolean delay;
+  float moveTo;
+  float moveDelay;
   Block(){
     x = 50;
     y = 50;
@@ -19,10 +23,15 @@ class Block{
   
   Block(float a, float b, float sizec, color a1,int i){
    x = a;
+   canMove = true;
    y = b;
    size = sizec;
    k = a1;
    yscaler = i;
+   speed = 10;
+   moveTo = 0;
+   moveDelay = 30;
+   delay = false;
   }
   void changeX(float x2){
    this.x = x2; 
@@ -30,7 +39,35 @@ class Block{
   float getX(){
    return this.x; 
   }
-  
+  void moveTo(float a){
+    canMove = false;
+    moveTo = a;
+  }
+  boolean canMove(){
+    if(canMove && !delay){
+     return true; 
+    }
+    return false;
+  }
+  void update(){
+    if(!canMove && !delay){
+     if((int) this.x > (int)moveTo){
+      this.x-= speed;
+    }else if((int) this.x < (int) moveTo){
+      this.x+= speed;
+    }else{
+      delay = true;
+    } 
+    }
+    if(delay){
+      moveDelay-=1;
+      if(moveDelay < 0){
+       delay = false;
+       canMove = true;
+       moveDelay = 30;
+      }
+    }
+  }
   void display(){
     //Color
     stroke(k);

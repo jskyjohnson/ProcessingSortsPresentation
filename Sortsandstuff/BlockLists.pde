@@ -6,19 +6,21 @@ class BlockList{
     k = new ArrayList<Block>();
   }
   
-  
+  void update(){
+    for(Block blocks : k){
+     blocks.update(); 
+    }
+  }
   void display(){  
    
     for(int i = 0; i < k.size(); i++){
-     
        k.get(i).display();
-     
     }
   }
   
-  void listGenerate(){
-    int listlength = (int) random(5,100);
-    listlength = 10;
+  void listGenerate(int toLength){
+    
+    int listlength = toLength;
     for(int i = 0; i < listlength; i++){
       Block newblock = new Block( .8*((i)*width/listlength) +.8*(width/listlength),(height/2 - ((height/2)/listlength)*i) + height/8 ,width/listlength,#FFFFFF,((height/2)/listlength)*i);
       this.addBlock(newblock);
@@ -26,10 +28,27 @@ class BlockList{
   
   }
   
-  int getlength(){
+  int getLength(){
    return k.size(); 
   }
-  
+  boolean swapBlocks(int a, int b){
+    if(allCanMove()){
+    float tempx = k.get(a).getX();
+    k.get(a).moveTo(k.get(b).getX());
+    k.get(b).moveTo(tempx);
+    return true;
+    }
+    return false;
+    
+  }
+  boolean allCanMove(){
+   for(Block blockers : k){
+    if(!blockers.canMove()){
+      return false;
+    }
+   }
+   return true;
+  }
   void shuffleblocks(){
     int shuffleamount = k.size()*10;
     
