@@ -18,17 +18,23 @@
 Block k;
 BlockList blocklist;
 boolean ktemp = true;
-
+boolean quicksort = false;
+boolean mergesort =false;
+Quicksort quicksort;
 void setup(){
   k = new Block();
   blocklist = new BlockList();
   size(500,500);
   blocklist.listGenerate(10);
   blocklist.shuffleblocks();
-  System.out.println(blocklist.toString());
-  //blocklist.addBlock(k);
+  
+ //selects Sort
+ if(quicksort){
+   quicksort = new Quicksort(blocklist);
+ }
 }
 void update(){
+  quicksort.update();
   blocklist.update();
 }
 void draw(){

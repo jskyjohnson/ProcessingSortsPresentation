@@ -36,6 +36,9 @@ class Block{
   void changeX(float x2){
    this.x = x2; 
   }
+  float getValue(){
+   return yscaler; 
+  }
   float getX(){
    return this.x; 
   }

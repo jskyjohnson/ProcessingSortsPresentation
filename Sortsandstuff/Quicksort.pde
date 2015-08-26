@@ -1,9 +1,12 @@
 public class Quicksort {
-  public Quicksort() {
-    
+  Blocklist blocklist;
+  public Quicksort(Blocklist ablocklist) {
+    this.blocklist = ablocklist;
   }
 
-  
+  void update(){
+    
+  }
   //Sorts each value into the upper of lower quarters of the BlickList
   private void areaSort() {
     
