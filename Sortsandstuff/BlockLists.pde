@@ -5,8 +5,6 @@ class BlockList{
   BlockList(){
     k = new ArrayList<Block>();
   }
-  
-  
   void display(){  
    
     for(int i = 0; i < k.size(); i++){
