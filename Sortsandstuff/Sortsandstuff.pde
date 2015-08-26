@@ -21,7 +21,13 @@ void setup(){
   k = new Block();
   blocklist = new BlockList();
   size(500,500);
+  blocklist.listGenerate();
+  blocklist.shuffleblocks();
+  System.out.println(blocklist.toString());
+  //blocklist.addBlock(k);
 }
 void draw(){
-  k.display();
+  blocklist.display();
+  blocklist.shuffleblocks();
+ // System.out.println(blocklist.toString());
 }
