@@ -27,7 +27,8 @@ void setup(){
   //blocklist.addBlock(k);
 }
 void draw(){
+  clear();
+  background(#AAAAAA);
   blocklist.display();
-  blocklist.shuffleblocks();
- // System.out.println(blocklist.toString());
+  
 }

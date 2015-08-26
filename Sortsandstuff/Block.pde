@@ -24,6 +24,12 @@ class Block{
    k = a1;
    yscaler = i;
   }
+  void changeX(float x2){
+   this.x = x2; 
+  }
+  float getX(){
+   return this.x; 
+  }
   
   void display(){
     //Color

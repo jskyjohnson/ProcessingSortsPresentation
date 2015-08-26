@@ -8,8 +8,11 @@ class BlockList{
   
   
   void display(){  
-    for(Block thisblock : k){
-     thisblock.display(); 
+   
+    for(int i = 0; i < k.size(); i++){
+     
+       k.get(i).display();
+     
     }
   }
   
@@ -29,7 +32,7 @@ class BlockList{
   
   void shuffleblocks(){
     int shuffleamount = k.size()*10;
-    System.out.println(this);
+    
     for(int i = 0; i < shuffleamount-1; i++){
      int rando = (int) random(k.size());
      int rundo = (int) random(k.size());
@@ -37,8 +40,12 @@ class BlockList{
       k.set(rando, k.get(rundo));
       k.set(rundo, temp);
       
+      float tempx = k.get(rando).getX();
+      k.get(rando).changeX(k.get(rundo).getX());
+      k.get(rundo).changeX(tempx);
+      
     }
-    System.out.println(this);
+    
   }
   
   void addBlock(Block temp){
