@@ -5,12 +5,15 @@ class BlockList{
   BlockList(){
     k = new ArrayList<Block>();
   }
+<<<<<<< HEAD
   
   void update(){
     for(Block blocks : k){
      blocks.update(); 
     }
   }
+=======
+>>>>>>> 78f8a8f96a406225569f53c33e4c62ee34b0f22b
   void display(){  
    
     for(int i = 0; i < k.size(); i++){
