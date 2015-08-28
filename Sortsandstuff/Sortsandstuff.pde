@@ -18,33 +18,38 @@
 Block k;
 BlockList blocklist;
 boolean ktemp = true;
-boolean quicksort = false;
+boolean quicksortcheck = false;
 boolean mergesort =false;
-Quicksort quicksort;
+boolean bubblesort = false;
+boolean bogosort = false;
+Sort sortobject;
+
 void setup(){
   k = new Block();
   blocklist = new BlockList();
   size(500,500);
   blocklist.listGenerate(10);
   blocklist.shuffleblocks();
-  
+  bubblesort = true;
  //selects Sort
- if(quicksort){
-   quicksort = new Quicksort(blocklist);
+ if(quicksortcheck){
+   sortobject = new Quicksort(blocklist);
+ }else if(bubblesort){
+  sortobject = new BubbleSort(blocklist); 
+ }else if(bogosort){
+  sortobject = new BogoSort(blocklist); 
  }
 }
+
 void update(){
-  quicksort.update();
+  sortobject.update();
   blocklist.update();
+  
 }
+
 void draw(){
   clear();
   update();
   background(#AAAAAA);
   blocklist.display();
-  
-  blocklist.swapBlocks((int)random(blocklist.getLength()),(int)random(blocklist.getLength())); 
-   
-  
-  
 }

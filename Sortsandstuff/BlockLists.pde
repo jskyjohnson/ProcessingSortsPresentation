@@ -21,7 +21,7 @@ class BlockList{
   void listGenerate(int toLength){
     int listlength = toLength;
     for(int i = 0; i < listlength; i++){
-      Block newblock = new Block( .8*((i)*width/listlength) +.8*(width/listlength),(height/2 - ((height/2)/listlength)*i) + height/8 ,width/listlength,#FFFFFF,((height/2)/listlength)*i);
+      Block newblock = new Block( ((i)*(width)/listlength) ,(height/2 - ((height/2)/listlength)*i) + height/8 ,width/listlength,#FFFFFF,((height/2)/listlength)*i);
       this.addBlock(newblock);
     }
   }
@@ -30,6 +30,9 @@ class BlockList{
    return k.size(); 
   }
   
+  Block getBlock(int i){
+   return  k.get(i);
+  }
   boolean swapBlocks(int a, int b){
     if(allCanMove()){
     float tempx = k.get(a).getX();
@@ -49,7 +52,7 @@ class BlockList{
    return true;
   }
   
-  ArrayList<Block> getBlockList(){
+  ArrayList<Block> getBlocks(){
    return k; 
   }
   

@@ -1,9 +1,9 @@
-public class Quicksort {
-  Blocklist blocklist;
-  public Quicksort(Blocklist ablocklist) {
-    this.blocklist = ablocklist;
+public class Quicksort extends Sort {
+  
+  public Quicksort(BlockList ablocklist) {
+    this.data = ablocklist;
   }
-
+  
   void update(){
     
   }
