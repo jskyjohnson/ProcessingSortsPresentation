@@ -4,6 +4,7 @@ public abstract class Sort{
   int currentA;
   int currentB;
   boolean sorted;
+  
   void update(){
     
   }

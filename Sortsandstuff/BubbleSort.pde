@@ -1,37 +1,41 @@
 public class BubbleSort extends Sort{
-  
+  int test = 0;
+  int test2 = 1;
   
   BubbleSort(BlockList indata){
    this.data = indata;
    this.currentA = 0;
    this.currentB = 1;
-   this.nextCommand();
+   this.sorted = false;
   }
   void update(){
-    
     if(checkMove(currentA, currentB)){
-      if(blocklist.swapBlocks(sortobject.getA(),sortobject.getB())){
-       nextCommand(); 
-      }
+     if(data.swapBlocks(test, test2)){
+      //nextCommand(); 
+     }
     }else{
-     nextCommand(); 
+     //System.out.println("NOT SWITCH:");
+    //nextCommand(); 
     }
-    
+    //nextCommand();
   }
   void nextCommand(){
-    currentA++;
-    currentB++;
     
-    if(currentB >= data.getLength()){
-     if(this.isSorted()){
-      System.out.println("PARTY"); 
-     }else{
-      currentA = 0;
-      currentB = 1;
-      System.out.println("NOT AS PARTY");
-     }
-    }
-    //System.out.println("WHAT");
+    
+    System.out.println(currentA + " "+ currentB);
+    //if((currentB >= data.getLength())){
+    // if(this.isSorted()){
+      
+    //  sorted();
+    // }else{
+       
+    //  currentA=0;
+    //  currentB = 1;
+     
+    // }
+    //}
+    //currentA++;
+    //currentB++;
   }
   boolean checkMove(int a, int b){
     if(data.getBlock(b).getValue() > data.getBlock(a).getValue()){
@@ -40,5 +44,7 @@ public class BubbleSort extends Sort{
      return false; 
     }
   }
-  
+  void sorted(){
+    this.sorted = true;
+  }
 }

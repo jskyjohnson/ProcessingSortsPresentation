@@ -33,6 +33,13 @@ class BlockList{
   Block getBlock(int i){
    return  k.get(i);
   }
+  boolean canMove(int a, int b){
+   if(k.get(a).getValue() < k.get(b).getValue()){
+    return true; 
+   }
+   return false;
+  }
+  
   boolean swapBlocks(int a, int b){
     if(allCanMove()){
     float tempx = k.get(a).getX();

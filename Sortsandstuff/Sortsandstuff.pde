@@ -27,9 +27,11 @@ Sort sortobject;
 void setup(){
   k = new Block();
   blocklist = new BlockList();
+  
   size(500,500);
   blocklist.listGenerate(10);
-  blocklist.shuffleblocks();
+  //blocklist.shuffleblocks();
+  
   bubblesort = true;
  //selects Sort
  if(quicksortcheck){
@@ -42,9 +44,9 @@ void setup(){
 }
 
 void update(){
+  
   sortobject.update();
   blocklist.update();
-  
 }
 
 void draw(){
@@ -52,4 +54,6 @@ void draw(){
   update();
   background(#AAAAAA);
   blocklist.display();
+  
+  
 }

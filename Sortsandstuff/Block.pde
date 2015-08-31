@@ -28,7 +28,7 @@ class Block{
    size = sizec;
    k = a1;
    yscaler = i;
-   speed = 10;
+   speed = 1;
    moveTo = 0;
    moveDelay = 30;
    delay = false;
